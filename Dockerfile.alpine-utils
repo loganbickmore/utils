@@ -1,0 +1,13 @@
+FROM alpine:latest
+RUN apk --no-cache add \
+        lftp \
+        ca-certificates \
+        libressl \
+        openssh \
+        curl \
+        wget \
+        busybox \
+        busybox-extras \
+        bash
+
+

@@ -1,0 +1,10 @@
+# pure ftp stuff
+#FROM stilliard/pure-ftpd
+#RUN useradd -d /var/ftp -s /sbin/nologin ftp
+#RUN mkdir /var/ftp
+#CMD /run.sh -l puredb:/etc/pure-ftpd/pureftpd.pdb -j -R -P localhost --with-nonroot
+FROM busybox
+EXPOSE 21
+CMD tcpsvd -vE 0.0.0.0 21 ftpd -w -S -A /home
+
+
